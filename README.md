@@ -46,7 +46,7 @@ if __name__ == '__main__':
 Pour chaque question, indiquez vos sites choisis pour reference ( où le prompt de l'outil d'IA utilisé)
 
   1. A quoi sert requirments.txt ?
-
+test
   1. A quoi ressemble un module en python ?
 
   1. A quoi ressemble un package ?
