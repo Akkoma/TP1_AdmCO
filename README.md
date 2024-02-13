@@ -1,28 +1,7 @@
-# SUJET_4ETI_AdmCO_20232024
-
-![ Bonnes Pratiques](images/Bonnes_Pratiques_m.jpg)
-
-**Activités AdmCo Partie 1 2023-2024**
-
-Le rendu  est à faire en markdown sous github. L'idée est de partir d'un fork de ce projet. Le rendu est à faire en monôme . Les activités de codage sont à faire sous gitlab. L'ensemble des projets doit être privés et vous devez m'ajouter comme maintener . L'ensemble des liens gitlabs des questions doit être inclus dans le rapport github.
-
-Héberger chaque question sur gitlab. Faite un tag 1.0 quand vous pensez que  l’exercice est finalisé. Donnez moi les droits maintener sur vos projets ( « fabricejumel »)
-
-A part pour les questions Préparatoires , votre objectif est de  créer des dépots git pour chaque question.
-
-l’idée est de faire mieux , en lien avec votre sujet (bien sûr) que ces deux exemples :
-
-<https://gitlab.com/fabricejumel/rendufinal_bouyssoux/>
-
-<https://gitlab.com/fabricejumel/tp1_ex8v0>
-
-Il est demandé de ne pas utiliser visualcode (on peut l'utiliser en tant qu'editeur, mais pas d'usage des outils terminaux, git , etc ...)
-
-
 ## Questions Préparatoires
 
   1. Expliquer le code suivant  (addition.py):
-# AdmCO_QuestPre
+
 ```python
 def add(x, y):
 #Cette fonction prend 2 variables en arguments, les additionent et retourne un message pour afficher le nom du module ou #l'operation a lieu, puis retroune le resultat de l'addition
@@ -44,341 +23,217 @@ if __name__ == '__main__': #on verifie qu'on a pas importé un module
 
   print('Code executed under the scope: ', __name__)
 ```
-#Questions
-Pour chaque question, indiquez vos sites choisis pour reference ( où le prompt de l'outil d'IA utilisé)
+
+# Questions
+Pour chaque question, indiquez vos sites choisis pour reference (où le prompt de l'outil d'IA utilisé)
 
   1. A quoi sert requirments.txt ?
     Il sert a transmettre les informations pour installer, configurer, initialiser... Pour pouvoir utiliser correctement l'application ou fichier.
 
   1. A quoi ressemble un module en python ?
+     
       Un module python est composé de code python, il peut contenir des variables, des fonctions... qui peuvent être importé dans d'autre fichier python.
      
   1. A quoi ressemble un package ?
+     
       un package est un ensemble de module python dans un repertoire. Il possède un nom et un fichier d'initialisation.
      
   1. Créer un code python utilisant sous forme de module addition.py
-```python
-import addition
-a=5
-b=2
-print(addition.add(a,b))
+     
+      ```
+        python
+          import addition
+          a=5
+          b=2
+          print(addition.add(a,b))
+      ```
 
-```
-  1. A quoi sert pip ? 
+  1. A quoi sert pip ?
+     
       pip est un gestionnaire de package. C'est-à-dire qu'il peut permettre leurs instalattions, leurs mises à jours, leurs désinstallation...
 
   1. A quoi sert PYTHONPATH ?
       PYTHONPATH est une varirable d'environnement qui contient le chemin d'accès aux modules pour pouvoir les importer.
 
   1. Où sont stockés les paquets installé par pip ?
-      Sans le -user les paquets installé par pip sont installés dans le répertoire globale de python bibliothèque 
-  1. A quoi sert pip install –user ? 
+     
+      Sans le -user les paquets installé par pip sont installés dans le répertoire globale de python bibliothèque
+     
+  1. A quoi sert pip install –user ?
+     
       Il permet de stocker les paquets dans un répertoire personnel.
-  1. A quoi sert venv ? 
-      Il sert a créer des environnements virtuels isolés. Cela permet de travailler sur différents projets sans que les modules interfères 
+     
+  1. A quoi sert venv ?
+     
+      Il sert a créer des environnements virtuels isolés. Cela permet de travailler sur différents projets sans que les modules interfères
+     
   1. Comment utiliser venv ?
+     
+     Pour pouvoir utiliser venv il faut:
+     Commecner par la créer avec la commande:
+     
+         python3 venv nom_de_la_venv
+     Une fois la venv crée, il faut l'activer :
+     
+         source chemin_vers_votre_env/bin/activate
+     Puis pouvoir la désactiver à la fin:
+
+         deactivate
 
   1. A quoi sert docker ?
-      Un docker est un conteneur, il sert à executer une application dans un environnment isolé, avec seulement les ressources nécessaires pour éxecuter           l'applications
+     
+      Un docker est un conteneur, il sert à executer une application dans un environnment isolé, avec seulement les ressources nécessaires pour éxecuter l'application
+     
   1. Comment utiliser docker ?
+
+Site utilisé:
+
+  https://openclassrooms.com/
+  
+  https://chat.openai.com/
+
 
 ## Exercice 0
 
 1. A quoi sert git config , Quelles sont les informtions minimales à renseigner. Est ce bien fait sur votre ordinateur ?
+   
+    git config permet de configurer les paramètres de git. Les informations minimales sont: le nom et le mail
+   
+1. Quelles sont les commandes de bases git ? a quoi servent elles ?
+   
+     git clone  / pour pouvoir clone le github ou gitlab localement
+     git checkout -b nom_de_la_branche / creer une branche
+     git add / pour ajouter des modifications
+     git commit / pour enregistrer les modifications
+     git push / pour push les modifcation
+     
+# TP 1 Degironde Alix
+
+## I. Objectif
+L'objectif de ce TP est d'apprendre à utiliser git. Pour cela, on va réaliser un calculateur permettant les opérations basiques (addition, soustraction, division et multiplication) entre 2 nombres complexes représentés sous la forme de tuple
 
-1. Quelles sont les commandes de bases git ? a quoi servent elles ? 
+## II. Organisation du projet
+Selon l'exercice, des fichiers différents seront présents. Mais des fichiers essentiels tels que le README.md sont présents. On va pouvoir retrouver les fichiers contenant les scripts nécessaires, des fichiers de test, puis ils seront réunis dans des packages, un possédant les fonctions et permmetant leur utilisation, et un de test. Et enfin, ils seront zippés.
+Le but étant d'apprendre, j'ai pris la décision de laisser les marques d'apprentissages, par exemple après une erreur des fichiers .vscode sont présent dans les premiers exercices.  
 
-Expliquez a quoi correspond ce worklow et pourquoi c'est une bonne pratique 
-![ Workflow git ](images/git-model@2x_m.png)
+#### Package calculator
+C'est dans ce package qu'est définie le script SimpleComplexCalculator.py qui est un script contenat une classe permettant l'execution des fonctions, fonctions contenut dans le script function_calculator.py.
+
+Par exemple voici l'utlisation de la méthode addition :  
+```
+python
+class SimpleComplexCalculator:
+    """Class representant une calculatrice complexe"""
 
+    def __init__(self, a, b):
+        self.val1 = a
+        self.val2 = b
 
-  1. Créer un depot sur github TEST_worflowgit_NOM qui contient juste un fichier README. 
-En vous inspirant [du lien suivant](https://github.com/fabricejumel/gitexamples_workflowgit/). Essayer de créer un ensemble de "commandes git " permettant d'avoir le plus exactement possible ( vous ferez des choix dans la cas ou ce n'est pas possible) le schéma précédent. Vous validerez par une commande d'affichage de git et une vision équivalente sur votre board github.
+    def add(self):
+        """Addition de deux nombres complexe sous la forme d'un tuple de taille 2.
 
-  1. Il est souvent plus simple de commencer son projet directement sur github ou gitlab en créant un README puis de le cloner avant de commencer à proprement parler son travail de développement. Proposer des modifications de la procedure vis à vis de l'exemple précedent qui tienne compte de ce changement et qui explique aussi à quelle moment procéder au push.
+        Parameters
+        ----------
+        self
 
-## Exercice 1
+        Returns
+        -------
+        tuple
+            L'addition des deux tuples grâce à la fonction addition de du module calculator.py.
+        """
+        return function_calculator.addition(self.val1, self.val2)
+```
 
-Créer un fichier python et coder 4 fonctions permettant de faire la somme, la différence, le produit et la division de 2 nombres complexes (sum, substract, mutliply, divide). 
+et la méthode addition: 
+``` python
+def addition(a, b):
+    """Addition de deux nombres complexe sous la forme d'un tuple de taille 2.
 
-On représentera les complexes par un tuple à 2 élements réels [4.67,5.89]. Cette Partie1 est entierement à but pedagogique. Il est à noté qu’une classe complexe existe en python mais ne sera pas utilisée .
+    Parameters
+    ----------
+    nombre1 : tuple
+        Le premier nombre est un tuple contenant 2 entiers.
+    nombre2 : tuple
+        Le premier nombre est un tuple contenant 2 entiers
 
+    Returns
+    -------
+    tuple
+        L'addition des deux tuples.
+    """
+    if isinstance(a, tuple) and isinstance(b, tuple) and len(a) == 2 and len(b) == 2:
+        if all(isinstance(x, int) for x in a) and all(isinstance(x, int) for x in b):
+            return (a[0] + b[0], a[1] + b[1])
+    return "Error"
 
+```
 
-Tester vos fonctions dans le même fichier
 
+#### Package_Test
+On réalise les test de notre package calculator dans ce package. On va donc pouvoir tester que les calculs se réalisent bien, mais surtout tester que des erreurs telles qu'un mauvais type de variable soient traités et ne fassent pas planter notre package. A l'aide de différent module (unittest..) et des logs, on a réalisé une classe dans dans le script TestComplexCalculator.py, cette classe contient plusieur fonctions permettant la vérification des fonctions, une pour vérifier qu'on ne divise pas par 0 dans la division et d'autre pour les types de variables.
+Voici par exemple le test de la fonction pour la vérification de l'addition:
+``` python
+def test_addition(self):
+        """Fonction de test de l'addition de calculator"""
+        result = self.c.add()
+        self.assertEqual(result, (4, 6))
 
+```
 
-## Exercice 2
+## III. Utilisation des packages
+Pour pouvoir utliser les packages ou script dans les exercices voici les étapes à suivre :
 
-Creer une classe SimpleComplexCalculator proposant vos 4 méthodes
+#### 1. Importer les dossiers 
+Pour pouvoir importer les fichiers des gitlab voici la commande à executer 
 
+    git clone <URL_du_dépôt>
 
+Vous pouvez ensuite appeler les scripts d'un package à l'extérieur de celui-ci à l'aide de la commande suivant à executer à la racine du dossier :
 
-Tester votre classe dans le même fichier
+    export PYTHONPATH=$PYTHONPATH:'.'
 
+#### 2. Installation des modules
+Pour installer des modules, il faut commencer par utiliser une venv, son utilisation est d'écrit dans la question préliminaire 10. Ensuite pour un installer, on utilise la commande:
 
+      pip install <nom_du_module>
 
-## Exercice 3
+Par exemple, on utlisera lors d'un exercice on utilisera pylint, on l'installe avec :
 
-Jeter un coup d’oeil sur les règles de codage en python (pep8,pep20), expliquer ce que vous avez du corriger dans votre code.
+    pip install pylint 
 
-(utiliser par exemple  pylint et black)
+#### 3. Utiliser les scritpts 
+Pour pouvoir utliser les scripts il faut utiliser la commande :
 
+    python3 <chemin_du_script_>/<nom_du_script>
+Par exemple pour executer le test il faut utiliser : 
 
+    python3 test/TestComplexCalculator.py
 
-## Exercice 4
 
-Creer un package calculator contenant votre classe
+## IV. Autres Dépôts du projet
+Chaque aspect du projet a été traité indépendemment sous la forme de projets Gitlab indépendants. Pour plus d'information sur un aspect précis vous pouvez lire le README de l'exerice correspondant, les liens :  
 
-Creer un package test contenant votre code de test de ce package/classe
+- Exercice 1 (création des méthodes pour les quatre opérations) : https://gitlab.com/admco_degironde/admco_exo1_degironde
+- Exercice 2 (création d'une classe contenant ces méthodes) : https://gitlab.com/admco_degironde/admco_exo2_degironde
+- Exercice 3 (règles de codage PEP8) : https://gitlab.com/admco_degironde/admco_exo3_degironde
+- Exercice 4 (Création Packages Calculator et Test) : https://gitlab.com/admco_degironde/admco_exo4_degironde
+- Exercice 5 (Amélioration classe Test) : https://gitlab.com/admco_degironde/admco_exo5_degironde
+- Exercice 6 (Ajout des test avec unittest) : https://gitlab.com/admco_degironde/admco_exo6_degironde
+- Exercice 7 (Ajout des logs aux tests) : https://gitlab.com/admco_degironde/admco_exo7_degironde
+- Exercice 8 (Création d'un version zippé) : https://gitlab.com/admco_degironde/admco_exo8_degironde
 
-Faites vos Commentaire sous forme de docstring, associé en particulier aux différentes méthodes
 
+## V. Ressources
+énoncé TP : https://github.com/fabricejumel/SUJET_4ETI_AdmCO_20232024/
 
+PEP8 :  
+https://python.sdv.univ-paris-diderot.fr/15_bonnes_pratiques/
 
-## Exercice 5
+Black : https://pypi.org/project/black/
+ 
+Pylint : https://pypi.org/project/pylint/
 
-Tester dans vos méthodes de calcul que les entrées sont biens des entiers (avec par exemple isInstance(a, int) ), renvoyer **"ERROR"** si le calcul est impossible, au passage, gérer explicitement le cas de la division impossible par zero ( ex **raise** ZeroDivisionError(**"Cannot divide by zero"**) )
+TestPypi : https://packaging.python.org/en/latest/tutorials/packaging-projects/#packaging-your-project
 
-
-
-Tester le bon fonctionnement de ces améliorations
-
-
-
-## Exercice 6
-
-En utilisant unitest (**import** unittest)
-
-dans votre classe test, mettre en place un ensemble de tests sur votre classe de calcul
-
-
-
-## Exercice 7
-
-En utilisant le système de gestion des logs (**import logging**)
-
-Compléter vos classes de logs à la fois dans le cas où tout se passe bien et en cas de problème
-
-
-
-
-
-## Exercice 8
-
-Distribution de votre code. Creation d’une version zippé de votre projet.
-
-Comment gérer de ne distribuer qu'une partie. Voir en particulier pour ne distribuer que la partie fonctionnelle , pas la partie test .
-
-
-
-
-## Exercice 9
-
-Création d’un package sur un repository pypi.
-
-Creer vous un compte sur test.pypi.org
-
-Apres avoir créer votre token, déposer la partie fonctionnelle de votre package. Faites l’installation
-
-
-## Exercice 10
-
-Peut-on installer directement les paquets à partir du repository gilab ? Cela est il aussi possible dans le cas de dépendances (requirement.txt) ?
-
-Prise en main, de l'intégration continu proposé par gitlab. 
-
-## Exercice 11
-
-Prise en main, de l'intégration continu proposé par gitlab. 
-
-Automatiser la phase de test et en cas de succès, la génération du .whl 
-
-## Exercice 11 (Bonus)
-
-Essayer d'automatiser la phase de déploiement sur Pypi depuis gitlab
-
-
-
-## Exercice 12 
-
-Montrer en quoi visualcode peut vous aider dans les différentes tâches associés aux exercices . Refaire l'ensemble en utilisant visualcode. Illustrer avec des copies d'ecrans quand vous utilisez les fonctionnalités et expliquer le résultat 
-
-
-
-
-
-
-**Quelques liens** 
-
-### systeme de fichier :
-
-<https://doc.ubuntu-fr.org/arborescence>
-
-<https://www.vermasachin.com/posts/5-python-package-management/>
-
-<https://www.activestate.com/resources/quick-reads/python-dependencies-everything-you-need-to-know/>
-
-<https://python-packaging-tutorial.readthedocs.io/en/latest/uploading_pypi.html>
-
-### venv:
-
-[<https://python.doctor/page-virtualenv-python-environnement-virtuel>](https://docs.python.org/fr/3/library/venv.html)
-
-
-
-### log :
-
-<https://docs.python.org/fr/3/howto/logging.html>
-
-<https://realpython.com/python-logging/>
-
-<https://www.loggly.com/ultimate-guide/python-logging-basics/>
-
-<https://stackoverflow.com/questions/384076/how-can-i-color-python-logging-output>
-
-
-
-### package
-
-<https://python.doctor/page-python-modules-package-module-cours-debutants-informatique-programmation>
-
-<https://realpython.com/python-modules-packages/>
-
-<https://packaging.python.org/tutorials/installing-packages/>
-
-<https://packaging.python.org/tutorials/packaging-projects/#packaging-your-project>
-
-<https://www.programiz.com/python-programming/package>
-
-<https://packaging.python.org/overview/>
-
-<https://python.doctor/page-pip-installer-librairies-automatiquement>
-
-<https://packaging.python.org/tutorials/packaging-projects/#packaging-your-project>
-
-<https://python-packaging-tutorial.readthedocs.io/en/latest/setup_py.html>
-
-http://cerfacs.fr/coop/python3_doc/pip_install/>
-
-<https://pip.pypa.io/en/stable/reference/pip_uninstall/>
-
-<https://choosealicense.com/>
-
-<https://www.datacamp.com/community/tutorials/pip-python-package-manager>
-
-<https://packaging.python.org/guides/distributing-packages-using-setuptools/>
-
-[https://blog.ionelmc.ro/presentations/packaging/](https://blog.ionelmc.ro/presentations/packaging/#slide:1)
-
-<https://docs.gitlab.com/ee/user/packages/pypi_repository/>
-
-<https://deusyss.developpez.com/tutoriels/Python/packaging_pypi/>
-
-<https://python-guide-pt-br.readthedocs.io/fr/latest/shipping/packaging.html>
-
-
-
-
-### PEP8 :
-
-<https://openclassrooms.com/fr/courses/4425111-perfectionnez-vous-en-python/4464230-assimilez-les-bonnes-pratiques-de-la-pep-8>
-
-<https://python.doctor/page-pep-8-bonnes-pratiques-coder-python-apprendre>
-
-<https://python.sdv.univ-paris-diderot.fr/15_bonnes_pratiques/>
-
-<https://about.gitlab.com/handbook/business-ops/data-team/python-style-guide/>
-
-<https://blog.impulsebyingeniance.io/outils-et-bonnes-pratiques-pour-un-code-python-de-bonne-qualite/>
-
-<https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html>
-
-
-
-### black:
-
-<https://python.doctor/page-black-code-formatter>
-
-pylint et others :
-
-<https://realpython.com/python-code-quality/>
-
-
-
-### docstring :
-
-<https://www.datacamp.com/community/tutorials/docstrings-python>
-
-<https://www.geeksforgeeks.org/python-docstrings/>
-
-<http://sametmax.com/les-docstrings/>
-
-<https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html>
-
-
-
-### test:
-
-<https://docs.python.org/fr/3.9/library/unittest.html>
-
-
-
-### git :
-
-<https://carlchenet.com/debuter-avec-git-creer-un-depot/>
-
-<https://openclassrooms.com/fr/courses/1233741-gerez-vos-codes-source-avec-git>
-<https://www.fil.univ-lille1.fr/~routier/enseignement/licence/poo/tdtp/gitlab.pdf>
-
-<https://www.hostinger.fr/tutoriels/tuto-git/>
-
-<http://lalloue.fr/blog/debuter-avec-visual-studio-code/>
-
-<https://realpython.com/python-git-github-intro/>
-
-<https://nvie.com/posts/a-successful-git-branching-model/>
-
-<https://georgestocker.com/2020/03/04/please-stop-recommending-git-flow/>
-
-<https://www.atlassian.com/fr/continuous-delivery/continuous-integration/trunk-based-development>
-
-<https://about.gitlab.com/solutions/gitlab-flow/>
-
-<https://dev.to/adityasridhar/how-to-use-git-efficiently-2pfa>
-
-<https://buddy.works/blog/5-types-of-git-workflows>
-
-<https://raygun.com/blog/git-workflow/>
-
-<https://stackoverflow.com/questions/5601931/what-is-the-best-and-safest-way-to-merge-a-git-branch-into-master>
-
-<https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
-
-### visualcode:
-
-<https://binx.io/blog/2020/03/05/setting-python-source-folders-vscode/>
-
-
-
-
-
-### débuter avec les modules
-
-<https://docs.python-guide.org/writing/structure/>
-
-<https://python.sdv.univ-paris-diderot.fr/14_creation_modules/>
-
-<https://wiki.labomedia.org/index.php/Modules_et_sous-modules.html>
-
-<https://courspython.com/modules.html>
-
-<http://www.olivierberger.org/python/doc/tut/node8.html>
-
-<https://www.devdungeon.com/content/python-import-syspath-and-pythonpath-tutorial>
-
-
-
-
+Inspiration README.md : https://gitlab.com/fabricejumel/rendufinal_bouyssoux/
 
